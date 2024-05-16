@@ -4,10 +4,10 @@ import '../../data/models/slider_model.dart';
 class SliderViewModel {
 
   final List<SliderModel> categoryList = [
-    SliderModel(image: Assets.imagesMenClothes, tittle: 'Men Clothes'),
-    SliderModel(image: Assets.imagesWomenClothes, tittle: 'Women Clothes'),
-    SliderModel(image: Assets.imagesJewelery, tittle: 'Jewelery'),
-    SliderModel(image: Assets.imagesElectronics, tittle: 'Electronics'),
+    SliderModel(image: Assets.imagesMenClothes, tittle: "men's clothing"),
+    SliderModel(image: Assets.imagesWomenClothes, tittle: 'women\'s clothing'),
+    SliderModel(image: Assets.imagesJewelery, tittle: 'jewelery'),
+    SliderModel(image: Assets.imagesElectronics, tittle: 'electronics'),
   ];
 
 

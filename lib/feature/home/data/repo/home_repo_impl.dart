@@ -33,5 +33,25 @@ class HomeRepoImpl extends HomeRepo {
       return left(ServerFailure(e.toString()));
     }
   }
+  
+  @override
+  Future<Either<Failure, List<AllProductModel>>> getCategories({required String endPoint}) async {
+    try {
+    var data =await  apiService.get(endPoint: 'products/category/$endPoint');
+    List<AllProductModel> categoriesList = [];
+    for (int i = 0; i < data.length; i++) {
+      categoriesList.add( AllProductModel.fromJson(
+          data[i],
+        ),);
+    }
+      return right(categoriesList);
+    } catch (e) {
+      if(e is DioException)
+      {
+        return left(ServerFailure.formDioError(e));
+      }
+      return left(ServerFailure(e.toString()));
+    }
+  }
 
 }

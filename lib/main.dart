@@ -6,11 +6,11 @@ import 'package:fason_app/feature/favorite/presentation/manger/favorite_cubit/fa
 import 'package:fason_app/feature/home/presentation/manger/latest_cubit/latest_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'core/utils/app_router.dart';
+import 'feature/home/presentation/manger/category_cubit/category_cubit.dart';
 
 void main() {
-   setupServiceLocator();
+  setupServiceLocator();
   runApp(const FasonApp());
 }
 
@@ -22,7 +22,8 @@ class FasonApp extends StatelessWidget {
     return MultiBlocProvider(providers: [
       BlocProvider(create: (context) => LatestCubit(getIt.get<HomeRepoImpl>()),),
       BlocProvider(create: (context) => FavoriteCubit(),),
-      BlocProvider(create: (context) => CartCubit(),)
+      BlocProvider(create: (context) => CartCubit(),),
+      BlocProvider(create: (context) => CategoryCubit(getIt.get<HomeRepoImpl>()),)
     ],
           child: MaterialApp.router(
             routerConfig: AppRouter.router,

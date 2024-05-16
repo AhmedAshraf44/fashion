@@ -6,9 +6,11 @@ import '../../../data/models/cart_model.dart';
 
 class CartCubit extends Cubit<CartState> {
   CartCubit() : super(CartInitial());
-  List <CartModel> cartList = [];
+   List <CartModel> cartList = [];
 
   void addCart({required AllProductModel product,}){
+    // var addNotes = Hive.box<ProductModel>(kProductBox);
+    //  // await addNotes.add(notes);
     cartList.add(CartModel(product: product));
     //  log('${cartList[0].product}');
     //  log('lenght cartList :${cartList.length}');

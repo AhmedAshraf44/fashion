@@ -1,5 +1,7 @@
+import 'package:fason_app/core/utils/app_router.dart';
 import 'package:fason_app/feature/home/presentation/view_model/slider_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../../core/utils/app_style.dart';
 import '../../../data/models/slider_model.dart';
 
@@ -33,6 +35,7 @@ final SliderModel categoryitem;
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        GoRouter.of(context).push(AppRouter.kCategoryView,extra:categoryitem.tittle);
       },
       child: Column(
         children: [
